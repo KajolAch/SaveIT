@@ -3,11 +3,11 @@ const router = express.Router();
 const data = require("../data");
 const goalData = data.goals;
 try {
-  router.get("/new", (req, res) => {
-    console.log("hi");
-    res.render("goals/new");
+  // router.get("/new", (req, res) => {
+  //   console.log("hi");
+  //   res.render("goals/new");
 
-  });
+  // });
 
   router.get("/:id", async (req, res) => {
     const goal = await goalData.getgoalById(req.params.id);
@@ -26,28 +26,31 @@ try {
 
   router.get("/", async (req, res) => {
     const goalList = await goalData.getAllgoals();
-    res.status(200).json(goalList);
+    console.log(goalList.length);
+    res.render('./index',{goals:goalList});
     // res.render("goals/index", {
     //   goals: goalList
     // });
   });
 
   router.post("/", async (req, res) => {
-    console.log(req.body);
     let wishGoalData = req.body;
     let errors = [];
 
-    if (!wishGoalData.title) {
+    if (!wishGoalData.goal_name) {
       errors.push("No title provided");
     }
 
-    if (!wishGoalData.body) {
+    // if (!wishGoalData.body) {
+    //   errors.push("No body provided");
+    // }
+    if (!wishGoalData.gamount) {
       errors.push("No body provided");
     }
 
-    if (!wishGoalData.userId) {
-      errors.push("No goaler selected");
-    }
+    // if (!wishGoalData.userId) {
+      // errors.push("No goaler selected");
+    // }
     // console.log(errors.length);
     if (errors.length > 0) {
       console.log("hi1");
@@ -61,18 +64,20 @@ try {
 
     try {
       const newgoal = await goalData.addgoal(
-        wishGoalData.title,
-        wishGoalData.body,
+        wishGoalData.goal_name,
+        // wishGoalData."most important",
+        "most important",
         wishGoalData.tags || [],
-        wishGoalData.userId,
+        "598a6059-5270-4bfe-9de3-7ad0eb1880bc",
         wishGoalData.gamount,
         wishGoalData.gstatus,
         wishGoalData.gpriority,
 
       );
       console.log(newgoal);
-      res.status(200).json(newgoal);
-      // res.redirect(`/goals/${newgoal._id}`);
+      // res.status(200).json(newgoal);
+// res.render('./index',{goals:goalData.getAllgoals()});
+      res.redirect('/goals');
     } catch (e) {
       console.log(e);
       res.status(500).json({
