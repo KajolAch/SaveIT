@@ -38,7 +38,7 @@ li>a {
 }
 
 .button {
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: rgb(156, 250, 164);
   border: none;
   color: rgb(22, 21, 21);
@@ -49,6 +49,9 @@ li>a {
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+}
+.button:hover{
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .button span {
@@ -279,7 +282,8 @@ input {
   background-color: #bbb;
 }
 
-goalList {
+.goalList {
+  border-radius: 6px;
   background-color: #23862b;
   /* width: 400px; */
   height: 160px;
