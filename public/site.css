@@ -5,43 +5,51 @@
 
 #header {
   width: 100%;
-  height: 80px;
-  background: rgb(156, 250, 164);
+  height: 50px;
+  /* background: rgb(156, 250, 164); */
+  background: rgb(20, 181, 102);
 }
 
 #navbar {
   width: 400px;
-  height: 80px;
+  /* height: 80px; */
   float: right;
 }
 
 #navbar>li {
   width: 200px;
   list-style: none;
-  float: left;
+  float: right;
 }
 
-li>a {
+.classLi {
   display: block;
-  color: rgb(8, 0, 0);
-  line-height: 80px;
+  color: white;
+  line-height: 50px;
   text-align: center;
-  font-family: cursive;
+  /* font-family: cursive; */
   font-size: 20px;
   text-decoration: none;
 }
+.classLi:hover {
+  background-color: #b1ffc5;
+  color: black
+}
 
 #logo {
-  width: 200px;
-  height: 80px;
+  /* width: 200px;
+  height: 80px; */
   float: left;
+  filter: invert(100%)
 }
 
 .button {
   border-radius: 6px;
-  background-color: rgb(156, 250, 164);
+  /* background-color: rgb(156, 250, 164); */
+  background-color: rgb(20, 181, 102);
   border: none;
-  color: rgb(22, 21, 21);
+  /* color: rgb(22, 21, 21); */
+  color: rgb(255, 255, 255);
   text-align: center;
   font-size: 28px;
   padding: 20px;
@@ -87,20 +95,21 @@ li>a {
   display: none;
   position: fixed;
   bottom: 110;
-  right: 380px;
-  border: 10px solid #f1f1f1;
+  left: 500px;
+  /* right:380px; */
+  border: 10px solid #dda6a6;
   z-index: 9;
 }
 
 .form-container {
   max-width: 500px;
-  height: 250px;
+  height: 280px;
   padding: 10px;
   background-color: white;
 }
 
 .form-container input[type=text] {
-  width: 90%;
+  width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
@@ -108,6 +117,18 @@ li>a {
 }
 
 .form-container input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.form-container input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=number]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -190,9 +211,9 @@ ul li:nth-child(odd) {
 }
 
 /* Darker background-color on hover */
-ul li:hover {
+/* ul li:hover {
   background-color: lavender;
-}
+} */
 
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
@@ -284,7 +305,8 @@ input {
 
 .goalList {
   border-radius: 6px;
-  background-color: #23862b;
+  /* background-color: #23862b; */
+  background-color: rgb(20, 181, 102);
   /* width: 400px; */
   height: 160px;
   width: 100%;
@@ -303,6 +325,7 @@ input {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+
 .chart-container {
   width: 70%;
   height: 300px;
@@ -310,9 +333,10 @@ input {
 }
 
 .row {
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   overflow-y: hidden;
-  white-space: nowrap
+  white-space: nowrap;
+  padding-bottom: 32px;
 }
 
 .form-popup2 {
@@ -323,31 +347,39 @@ input {
   overflow: auto;
   position: fixed;
   top: 100px;
-  left: 250px;
-  right: 380px;
+  left: 350px;
+  right: 400px;
   bottom: 100;
-  width: 50%;
-  height: 70%;
+  width: auto;
+  height: auto;
   border: 10px solid #dda6a6;
   z-index: 9;
 }
 
 .form-container2 {
-  max-width: 800px;
-  height: 3000px;
+  /* max-width: 800px; */
+  height: 447px;
   padding: 10px;
   background-color: white;
 }
 
 .form-container2 input[type=text] {
-  width: 90%;
+  width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
   background: #f1f1f1;
 }
 
-.form-container2 input[type=text]:focus {
+.form-container2 input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container2 input[type=number]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -374,4 +406,87 @@ input {
 
 .labelfont {
   font-size: 30px;
+}
+.dots{
+  list-style-type: none;
+}
+.edit {
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: rgb(22, 21, 21);
+  text-align: center;
+  font-size: 28px;
+  padding: 6px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+.edit:hover{
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.edit span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.2s;
+}
+
+.edit span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.edit:hover span {
+  padding-right: 25px;
+}
+
+.edit:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.goalFont{
+  font-size: 35px;
+  color: white;
+}
+.form-popup5 {
+  display: none;
+  /* position: fixed;
+  bottom: 100;
+  right: 380px;*/
+  overflow: auto;
+  position: fixed;
+  top: 100px;
+  left: 300px;
+  right: 380px;
+  bottom: 100;
+  width: auto;
+  height: auto;
+  border: 10px solid #dda6a6;
+  z-index: 9;
+}
+.form-container5 {
+  /* max-width: 700px; */
+  height: auto;
+  padding: auto;
+  background-color: white;
+}
+.form-container5 .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+.form-container5 .cancel {
+  background-color: red;
 }

@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const data = require("../data");
 const goalData = data.goals;
+const userData = data.users;
+const userId = "598a6059-5270-4bfe-9de3-7ad0eb1880bc";
 try {
   // router.get("/new", (req, res) => {
   //   console.log("hi");
@@ -27,7 +29,9 @@ try {
   router.get("/", async (req, res) => {
     const goalList = await goalData.getAllgoals();
     console.log(goalList.length);
-    res.render('./index',{goals:goalList});
+    res.render('./index', {
+      goals: goalList
+    });
     // res.render("goals/index", {
     //   goals: goalList
     // });
@@ -49,7 +53,7 @@ try {
     }
 
     // if (!wishGoalData.userId) {
-      // errors.push("No goaler selected");
+    // errors.push("No goaler selected");
     // }
     // console.log(errors.length);
     if (errors.length > 0) {
@@ -68,15 +72,18 @@ try {
         // wishGoalData."most important",
         "most important",
         wishGoalData.tags || [],
-        "598a6059-5270-4bfe-9de3-7ad0eb1880bc",
+        userId,
         wishGoalData.gamount,
         wishGoalData.gstatus,
         wishGoalData.gpriority,
 
       );
       console.log(newgoal);
+      // userData.addgoalToUser(userId, newgoal._id, newgoal.gname);
+
+      console.log(newgoal);
       // res.status(200).json(newgoal);
-// res.render('./index',{goals:goalData.getAllgoals()});
+      // res.render('./index',{goals:goalData.getAllgoals()});
       res.redirect('/goals');
     } catch (e) {
       console.log(e);
