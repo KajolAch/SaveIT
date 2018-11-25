@@ -1,11 +1,4 @@
-
-<div id="header">
-    <div id="logo">
-        <img src="public/jar.png" height="40" width="60" top="0">
-        <font size="5" style="color:black;line-height:50px">SaveIT</font>
-    </div>
-	</div>
-    <div class="wrapper">
+<div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header">
@@ -54,203 +47,283 @@
         </ul>
     </nav>
     <div id="content">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                {{!-- <i class="fas fa-align-left"></i> --}}
-                <span>John</span>
-            </button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    {{!-- <i class="fas fa-align-left"></i> --}}
+                    <span>John</span>
+                </button>
 
-        </div>
-    </nav>
-    
-
-
-<!--===================== FIRST SECTION ==================================-->
-<div class="classDiv" id="FirstSec">
-    <button class="button" onclick="openForm()"><span>Add Savings</span></button>
-    <div class="form-popup" id="myForm">
-        <form action="#" class="form-container">
-            <label for="amount" class="labelfont"><b>Enter your Savings amount</b></label>
-            <input type="number" placeholder="Amount" name="amount" required>
-            <button type="submit" class="btn">Save</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
+            </div>
+        </nav>
     </div>
-    <button class="button" onclick="openForm2()"><span>Emergency Removal</span></button>
-    <div class="form-popup" id="myForm2">
-        <form action="#" class="form-container">
-            <label for="amount" class="labelfont"><b>Enter amount to be removed</b></label>
-            <input type="number" placeholder="Amount" name="amount" required>
-            <button type="submit" class="btn">Remove</button>
-            <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
-        </form>
-    </div>
-</div>
-<script>
-    function openForm() {
-        document.getElementById("myForm").style.display = "inline-block";
-    }
 
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-    }
-    function openForm2() {
-        document.getElementById("myForm2").style.display = "block";
-    }
 
-    function closeForm2() {
-        document.getElementById("myForm2").style.display = "none";
-    }
-</script>
-<!--===================== SECOND SECTION ==================================-->
+    <!--===================== FIRST SECTION ==================================-->
+    <!-- Main container -->
+    <div class="page-container">
 
-<div id="myDIV" class="header">
-    <h2 style="margin:5px">My Goal List</h2>
-    <!--<input type="text" id="myInput" placeholder="GOAL...">-->
-    <!--<span onclick="openForm3()" class="addBtn">Add</span>-->
-    <button class="button" onclick="openForm3()"><span>Add Goal</span></button>
-    <!--**********************************************************************************************-->
-    <div class="form-popup2" id="myForm3">
-        <form action="/goals" class="form-container2" method="POST">
-            <label for="Goals" class="labelfont"><b>Enter your goal</b></label>
-            <input type="text" placeholder="Goal" name="goal_name" id="myForm4" required>
-            <input type="number" placeholder="Goal amount" name="gamount" min="1" required>
-            <input type="number" placeholder="Priority" name="gpriority" min="1" required>
-            <button type="submit" class="btn">Add</button>
-            <button type="button" class="btn cancel" onclick="closeForm3()">Close</button>
-        </form>
-    </div>
-    <!--**********************************************************************************************-->
-{{!-- </div> --}}
-<ul id="myUL1" class="dots">
-    <div class="table">
-        <div class="row" id="abc">
-            {{!--
-            <script>console.log(goals)</script> --}}
-            {{#each goals}}
+        <!-- bloc-0 -->
 
-            <div class='col-sm-3'>
-                <div class='goalList'>
-                    <li class="goalFont">{{this.gname}}</li>
-                    <div class='progress'>
-                        <div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100'
-                            style='width:20%'> 20%</div>
-                    </div>
-                    {{!-- <div>Hi</div> --}}
-                    <button class="edit" onclick="openForm5()" value= {{this._id}}><span>Edit</span></button>
-                    <div class="form-popup5" id="myForm5">
-                        <form action="#" class="form-container5">
-                            <label for="edition" class="labelfont"><b>{{this.gname}}</b></label>
-                            {{!-- <input type="text" placeholder="Amount" name="amount" required>
-                            <button type="submit" class="btn">Save</button> --}}
-                            <button type="button" class="btn cancel" onclick="closeForm5()">Close</button>
-                        </form>
+        <!-- bloc-0 END -->
+
+        <!-- bloc-1 -->
+        <div class="bloc bgc-white l-bloc" id="bloc-1">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <button class="button" onclick="openForm()"><span>Add Savings</span></button>
+                                        <div class="form-popup" id="myForm">
+                                            <form action="#" class="form-container">
+                                                <label for="amount" class="labelfont"><b>Enter your Savings amount</b></label>
+                                                <input type="number" placeholder="Amount" name="amount" required>
+                                                <button type="submit" class="btn">Save</button>
+                                                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <button class="button" onclick="openForm2()"><span>Emergency Removal</span></button>
+                                        <div class="form-popup" id="myForm2">
+                                            <form action="#" class="form-container">
+                                                <label for="amount" class="labelfont"><b>Enter amount to be removed</b></label>
+                                                <input type="number" placeholder="Amount" name="amount" required>
+                                                <button type="submit" class="btn">Remove</button>
+                                                <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="row ">
+                                    <div class="col-sm-8">
+                                        <span class="empty-column"></span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <span class="empty-column"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            {{/each}}
         </div>
+        <!-- bloc-1 END -->
+
+        <!-- bloc-2 -->
+        <div class="bloc bgc-white l-bloc" id="bloc-2">
+            <div class="container bloc-sm">
+                <div class="row voffset">
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="text-center">
+                                    <button class="button" onclick="openForm3()"><span></span></button>
+                                </div>
+                                <div class="form-popup2" id="myForm3">
+                                    <form action="/goals" class="form-container2" method="POST">
+                                        <label for="Goals" class="labelfont"><b>Enter your goal</b></label>
+                                        <input type="text" placeholder="Goal" name="goal_name" id="myForm4" required>
+                                        <input type="number" placeholder="Goal amount" name="gamount" min="1" required>
+                                        <input type="number" placeholder="Priority" name="gpriority" min="1" required>
+                                        <button type="submit" class="btn">Add</button>
+                                        <button type="button" class="btn cancel" onclick="closeForm3()">Close</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{#each goals}}
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <button onclick="closeForm5()" class=' pull-right'><span class="ion ion-trash-a icon-md"></span></button>
+                                <span>
+                                    <div class="goalFont">{{this.gname}}</div>
+                                </span>
+                                <div class='progress'>
+                                    <div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0'
+                                        aria-valuemax='100' style='width:20%'> 20%</div>
+                                </div>
+                                <div class="form-popup5" id="myForm5">
+                                    <form action="#" class="form-container5">
+                                        <label for="edition" class="labelfont"><b>{{this.gname}}</b></label>
+                                        <button type="button" class="btn cancel" onclick="closeForm5()">Close</button>
+                                    </form>
+                                </div>
+
+                                <button onclick="openForm5()" value={{this._id}} class="btn btn-d btn-lg btn-block">
+                                    <div class="text-center">Edit</div>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <span class="ion ion-trash-a icon-md pull-right"></span>
+                                <li class="goalFont">Misc.</li>
+                                <div class='progress'>
+                                    <div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0'
+                                        aria-valuemax='100' style='width:20%'> 20%</div>
+                                </div>
+
+                                <div class="form-popup5" id="myForm6">
+                                    <form action="#" class="form-container5">
+                                        <label for="edition" class="labelfont"><b>Misc.</b></label>
+                                    </form>
+                                </div>
+                                <button onclick="openForm6()" value={{this._id}} class="btn btn-d btn-lg btn-block">
+                                    <div class="text-center">Edit</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bloc-2 END -->
+
+        <!-- ScrollToTop Button -->
+        <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1')"><span class="fa fa-chevron-up"></span></a>
+        <!-- ScrollToTop Button END-->
+
+
     </div>
-</ul>
-</div>
+    <!-- Main container END -->
 
-<script>
-    // Create a "close" button and append it to each list item
-    var myNodelist = document.getElementsByClassName("goalList");
-    var i;
-    for (i = 0; i < myNodelist.length; i++) {
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
 
-        span.appendChild(txt);
-        myNodelist[i].appendChild(span);
 
-    }
+    <!-- Preloader -->
+    <div id="page-loading-blocs-notifaction"></div>
+    <!-- Preloader END -->
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "inline-block";
+        }
 
-    function openForm3() {
-        document.getElementById("myForm3").style.display = "block";
-    }
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+        function openForm2() {
+            document.getElementById("myForm2").style.display = "block";
+        }
 
-    function closeForm3() {
-        document.getElementById("myForm3").style.display = "none";
-    }
-    function openForm5() {
-        document.getElementById("myForm5").style.display = "block";
-    }
-    function closeForm5() {
-        document.getElementById("myForm5").style.display = "none";
-    }
+        function closeForm2() {
+            document.getElementById("myForm2").style.display = "none";
+        }
+    </script>
+    <!--===================== SECOND SECTION ==================================-->
 
-    // Click on a close button to hide the current list item
-    var close = document.getElementsByClassName("close");
-    var i;
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            div.style.display = "none";
+
+    <script>
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByClassName("goalList");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
 
         }
-    }
 
-    // Add a "checked" symbol when clicking on a list item
-    var list = document.querySelector('ul');
-    list.addEventListener('click', function (ev) {
-        if (ev.target.tagName === 'LI') {
-            ev.target.classList.toggle('checked');
+        function openForm3() {
+            document.getElementById("myForm3").style.display = "block";
         }
-    }, false);
 
-    // Create a new list item when clicking on the "Add" button
-    function newElement() {
-        // var li = document.createElement("li");
-        // var l_strName = String(document.getElementsByName("goalText")) ;
-        // console.log(l_strName);
-        // var l_numInitialAmount = Number(document.getElementsByName("goalamountText")) ;
-        // var l_numMinimumAmount = Number(document.getElementsByName("goalinitialText")) ;
-        console.log(document.getElementById("myForm4"));
-        var li = "<div class='col-sm-3'><div class='goalList'><li>" + document.getElementsById("myForm4").value + "</li><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:20%'> 20%</div></div></div></div>";
-        // var inputValue = document.getElementById("myInput").value;
-        // var t = document.createTextNode(inputValue);
-        // li.appendChild(t);
-        // if (inputValue === '') {
-        // alert("You must write something!");
-        // } else {
-        // document.getElementById("myUL1").appendChild(li);
-        // }
-        // document.getElementById("myInput").value = "";
+        function closeForm3() {
+            document.getElementById("myForm3").style.display = "none";
+        }
+        function openForm5() {
+            document.getElementById("myForm5").style.display = "block";
+        }
+        function openForm6() {
+            document.getElementById("myForm6").style.display = "block";
+        }
+        function closeForm5() {
+            document.getElementById("myForm5").style.display = "none";
+        }
 
-        // var span = document.createElement("SPAN");
-        // var txt = document.createTextNode("\u00D7");
-        // span.className = "close";
-        // span.appendChild(txt);
-        // li.appendChild(span);
-        // if(l_strName&&l_numInitialAmount&&l_numMinimumAmount)
-        $(abc).prepend(li);
-        // for (i = 0; i < close.length; i++) {
-        //   close[i].onclick = function () {
-        //     var div = this.parentElement;
-        //     div.style.display = "none";
-        //   }
-        // }
-    }
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
 
-</script>
+            }
+        }
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!--========================== THIRD SECTION ======================================-->
-<div class="chart-container" id="ThirdSec">
-    <!--this is test test-->
-    <canvas id="bar-chartcanvas"></canvas>
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function (ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+            // var li = document.createElement("li");
+            // var l_strName = String(document.getElementsByName("goalText")) ;
+            // console.log(l_strName);
+            // var l_numInitialAmount = Number(document.getElementsByName("goalamountText")) ;
+            // var l_numMinimumAmount = Number(document.getElementsByName("goalinitialText")) ;
+            console.log(document.getElementById("myForm4"));
+            var li = "<div class='col-sm-3'><div class='goalList'><li>" + document.getElementsById("myForm4").value + "</li><div class='progress'><div class='progress-bar' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:20%'> 20%</div></div></div></div>";
+            // var inputValue = document.getElementById("myInput").value;
+            // var t = document.createTextNode(inputValue);
+            // li.appendChild(t);
+            // if (inputValue === '') {
+            // alert("You must write something!");
+            // } else {
+            // document.getElementById("myUL1").appendChild(li);
+            // }
+            // document.getElementById("myInput").value = "";
+
+            // var span = document.createElement("SPAN");
+            // var txt = document.createTextNode("\u00D7");
+            // span.className = "close";
+            // span.appendChild(txt);
+            // li.appendChild(span);
+            // if(l_strName&&l_numInitialAmount&&l_numMinimumAmount)
+            $(abc).prepend(li);
+            // for (i = 0; i < close.length; i++) {
+            //   close[i].onclick = function () {
+            //     var div = this.parentElement;
+            //     div.style.display = "none";
+            //   }
+            // }
+        }
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--========================== THIRD SECTION ======================================-->
+</div>
+
 </div>
 </div>
-</div>
-</div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
 <script src="/public/jsCode/jquery.min.js"></script>
 <script src="/public/jsCode/Chart.min.js"></script>
 <script src="/public/jsCode/bar.js"></script>

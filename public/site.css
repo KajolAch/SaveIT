@@ -11,7 +11,8 @@
   min-width: 250px;
   max-width: 250px;
   min-height: 100vh;
-  background: #7386D5;
+  /* background: #7386D5; */
+  background-image: url('./images/original.jpg'), linear-gradient(to bottom right,#002f4b,#dc4225);
   color: #fff;
   transition: all 0.3s;
 }
@@ -132,10 +133,9 @@ a[data-toggle="collapse"] {
   text-align: center;
   font-size: 28px;
   padding: 20px;
-  width: 500px;
+  width: 100%;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
 }
 .button:hover{
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -415,8 +415,7 @@ input {
   /* overflow-x: scroll; */
   overflow-y: hidden;
   white-space: nowrap;
-  padding-bottom: 32px;
-}
+ }
 
 .form-popup2 {
   display: none;
@@ -531,8 +530,8 @@ input {
   right: 0;
 }
 .goalFont{
-  font-size: 35px;
-  color: white;
+  font-size: 25px;
+  color: black;
 }
 .form-popup5 {
   display: none;
