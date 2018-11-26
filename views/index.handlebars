@@ -61,7 +61,7 @@
 
     <!--===================== FIRST SECTION ==================================-->
     <!-- Main container -->
-    <div class="page-container">
+    <div >
 
         <!-- bloc-0 -->
 
@@ -73,29 +73,43 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="panel">
-                                    <div class="panel-body">
-                                        <button class="button" onclick="openForm()"><span>Add Savings</span></button>
+                            <div class="col-sm-4 clsSavingsColumn">
+                                <div class="panel addSavings">
+                                    <div class="panel-body savingbuttons">
+                                        <button class="button addsavingsbtn" onclick="openForm()"><span>Add Savings</span></button>
                                         <div class="form-popup" id="myForm">
                                             <form action="#" class="form-container">
-                                                <label for="amount" class="labelfont"><b>Enter your Savings amount</b></label>
-                                                <input type="number" placeholder="Amount" name="amount" required>
-                                                <button type="submit" class="btn">Save</button>
-                                                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                                                <button onclick="closeForm()" class='emergencyremoval pull-right'><span>x</span></button>
+                                                <div class="row">
+                                                    <label for="amount" class="labelfont"><b>Enter your Savings amount</b></label>
+                                                    <input type="number" placeholder="Amount" name="amount" required>
+                                                </div>
+
+                                                <div class="row foot">
+                                                    <button type="submit" class="btn">Save</button>
+                                                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                                                </div>
+
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel">
-                                    <div class="panel-body">
-                                        <button class="button" onclick="openForm2()"><span>Emergency Removal</span></button>
+                                <div class="panel removeSavings">
+                                    <div class="panel-body savingbuttons">
+                                        <button class="button emergencyremoval" onclick="openForm2()"><span>Emergency
+                                                Removal</span></button>
                                         <div class="form-popup" id="myForm2">
                                             <form action="#" class="form-container">
-                                                <label for="amount" class="labelfont"><b>Enter amount to be removed</b></label>
-                                                <input type="number" placeholder="Amount" name="amount" required>
-                                                <button type="submit" class="btn">Remove</button>
-                                                <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
+                                                <button onclick="closeForm2()" class=' pull-right'><span>x</span></button>
+                                                <div class="row">
+                                                    <label for="amount" class="labelfont"><b>Enter amount to be removed</b></label>
+                                                    <input type="number" placeholder="Amount" name="amount" required>
+                                                </div>
+
+                                                <div class="row foot">
+                                                    <button type="submit" class="btn">Remove</button>
+                                                    <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
@@ -216,7 +230,9 @@
             document.getElementById("myForm").style.display = "none";
         }
         function openForm2() {
+            document.getElementById("myForm2").focus();
             document.getElementById("myForm2").style.display = "block";
+
         }
 
         function closeForm2() {
