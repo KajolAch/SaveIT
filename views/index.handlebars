@@ -2,15 +2,15 @@
     <!-- Sidebar -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>My Profile</h3>
+            {{!-- <h3>My Profile</h3> --}}
         </div>
 
         <ul class="list-unstyled components">
             <p>Sections</p>
             <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
+                <a href="#homeSubmenu"  aria-expanded="false" class="dropdown-toggle">Home</a>
+                {{!-- <ul class="collapse list-unstyled" id="homeSubmenu"> --}}
+                    {{!-- <li>
                         <a href="#">Home 1</a>
                     </li>
                     <li>
@@ -19,12 +19,12 @@
                     <li>
                         <a href="#">Home 3</a>
                     </li>
-                </ul>
+                </ul> --}}
             </li>
             <li>
-                <a href="#ThirdSec">Your Monthly Savings</a>
+                <a href="#ThirdSec">Dashboard</a>
             </li>
-            <li>
+            {{!-- <li>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
@@ -37,9 +37,9 @@
                         <a href="#ThirdSec">Page 3</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li>
-                <a href="#">Portfolio</a>
+                <a href="#">My Profile</a>
             </li>
             <li>
                 <a href="#">Contact</a>
@@ -50,8 +50,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    {{!-- <i class="fas fa-align-left"></i> --}}
-                    <span>John</span>
+                     {{!-- <i class="fas fa-align-left"></i>  --}}
+                    <span>☰</span>
                 </button>
 
             </div>
@@ -140,7 +140,7 @@
                         <div class="panel">
                             <div class="panel-body">
                                 <div class="text-center">
-                                    <button class="button" onclick="openForm3()"><span></span></button>
+                                    <button class="button" onclick="openForm3()"><span>+ Goal</span></button>
                                 </div>
                                 <div class="form-popup2" id="myForm3">
                                     <form action="/goals" class="form-container2" method="POST">
