@@ -1,12 +1,10 @@
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
-        <div class="sidebar-header">
-            {{!-- <h3>My Profile</h3> --}}
-        </div>
+        
 
         <ul class="list-unstyled components">
-            <p>Sections</p>
+            {{!-- <p>Sections</p> --}}
             <li class="active">
                 <a href="#homeSubmenu"  aria-expanded="false" class="dropdown-toggle">Home</a>
                 {{!-- <ul class="collapse list-unstyled" id="homeSubmenu"> --}}
@@ -138,6 +136,7 @@
                 <div class="row voffset">
                     <div class="col-sm-3">
                         <div class="panel">
+                            <div class="container">
                             <div class="panel-body">
                                 <div class="text-center">
                                     <button class="button" onclick="openForm3()"><span>+ Goal</span></button>
@@ -154,12 +153,13 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
                     {{#each goals}}
                     <div class="col-sm-3">
                         <div class="panel">
                             <div class="panel-body">
-                                <button onclick="closeForm5()" class=' pull-right'><span class="ion ion-trash-a icon-md"></span></button>
+                                <button onclick="closeForm5()" class=' pull-right'><span class="glyphicon glyphicon-trash"></span></button>
                                 <span>
                                     <div class="goalFont">{{this.gname}}</div>
                                 </span>
